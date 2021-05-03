@@ -3,7 +3,7 @@ import csv
 
 
 print("+------------------------------------------------------------------+")
-with open('C:\\Users\\User\\Desktop\\iplist.csv', newline='') as csvfile:
+with open('PATH TO FILE\\filename.csv', newline='') as csvfile:
     filereader = csv.reader(csvfile)
     next(filereader)
     for row in filereader:
@@ -13,7 +13,7 @@ with open('C:\\Users\\User\\Desktop\\iplist.csv', newline='') as csvfile:
         if "Received = 4" in ping_response:
             print(f"{ips} is UP. Ping Successful!")
         else:
-            print(f"Ping to {ips} failed...")
+            print(f"Ping to {ips} failed. Log entry created!")
             down_ip = []
             down_ip.append(ips)
             with open('down iplist.csv', 'a' , newline='') as writefile:
